@@ -1,0 +1,239 @@
+
+body {
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container {
+    position: relative;
+}
+
+.container .card {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: linear-gradient(45deg, #00bd56, #f9fd50);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container .card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+
+    background: linear-gradient(-45deg, #c7004c, #ffaaaa);
+    backdrop-filter: blur();
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+
+
+.container .card:after {
+    content: "AARUDHARA";
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    font-size: 3em;
+    font-weight: 20;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.04);
+
+}
+
+.container .card .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    opacity: 1; /* Initially, the image is fully visible */
+}
+
+
+
+
+.container .card .imgBx img {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 270px;
+    filter: drop-shadow(25px 10px 12px #222);
+}
+
+.container .card .contentBx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    text-align: left;
+    transition: 1s;
+    z-index: 90; /* Initially, push content down */
+    opacity: 1; /* Initially, content is not visible */
+}
+
+
+
+.container .card .contentBx h3 {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+
+}
+
+.container .card .contentBx .size,
+.container .card .contentBx .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    transition: .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+
+.container .card .contentBx .size h3
+.container .card .contentBx .color h3 {
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.container .card .contentBx .size span {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    margin: 0 5px;
+    transition: .5s;
+    color: #111;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+.container .card .contentBx .color span {
+    width: 20px;
+    height: 20px;
+    background: #ff0;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.container .card .contentBx a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .5s;
+}
+
+
+ /* card */
+@media (min-width: 992px) {
+    .col {
+        width: calc(33.33% - 20px);
+        /* Adjust spacing between cards */
+        margin-right: 20px;
+    }
+
+    .col:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 601px) {
+    .col {
+        width: calc(50% - 20px);
+        /* Adjust spacing between cards */
+        margin-right: 20px;
+    }
+
+    .col:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .col {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.topics {
+    text-align: center;
+    position: relative;
+    color: #D1A272;
+}
+
+.topics::before,
+.topics::after {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 0;
+    /* Start with no width */
+    background-color: #D1A272;
+    margin: 0 10px;
+    transition: width 0.5s ease;
+    /* Add transition for smooth width change */
+}
+
+.topics.animated::before,
+.topics.animated::after {
+    width: 100px;
+    /* Initial width */
+}
+
+@media (max-width: 768px) {
+    .topics::before,
+    .topics::after {
+        width: 60px; /* Adjust this value as needed */
+    }
+
+    .topics.animated::before,
+    .topics.animated::after {
+        width: 60px; /* Adjust this value as needed */
+    }
+}
+
+@keyframes lineAnimation {
+    0% {
+        width: 0;
+        /* Start with no width */
+    }
+
+    100% {
+        width: 100%;
+        /* Expand to full width */
+    }
+}

@@ -1,0 +1,277 @@
+.horizontal-scroll-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.scroll-btn {
+    background: rgba(0, 0, 0, 0.5);
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: hidden;
+    gap: 20px;
+    scroll-behavior: smooth;
+    padding: 0 0;
+    width: calc(4 * 300px); /* Adjust based on your preference */
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+.scroll-card {
+    width: 360px;
+    height: 400px;
+    flex: 0 0 auto;
+    background: transparent;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+
+
+.scroll-card img {
+    max-width: 250%;
+    /* object-fit: cover; */
+    border-radius: 8px; /* Rounded corners for images if desired */
+}
+.scroll-card h4, .scroll-card p {
+    padding: 10px; /* For spacing inside the card */
+}
+
+@media (max-width: 768px) { /* This will apply styles for screens up to 768px wide */
+
+    .scroll-container {
+        width: calc(1 * 360px); /* Show only one card */
+        overflow-x: auto; /* Allows scrolling on overflow */
+    }
+
+    /* Optional: Hide scrolling buttons on mobile */
+    /* .scroll-btn {
+        display: none;
+    } */
+
+    /* Optional: Adjust card styles if needed for better mobile display */
+    .scroll-card {
+        margin: 15px auto; /* Center the card */
+    }
+
+}
+
+.prcontainer {
+    position: relative;
+}
+
+.prcontainer .prcard {
+    position: relative;
+    width: 320px;
+    height: 350px;
+    background: linear-gradient(45deg, #00bd56, #f9fd50);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+
+.prcontainer .prcard:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+
+    background: linear-gradient(-45deg, #c7004c, #ffaaaa);
+    backdrop-filter: blur();
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+
+
+.prcontainer .prcard:after {
+    content: "AARUDHARA";
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    font-size: 3em;
+    font-weight: 20;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.04);
+}
+
+.prcontainer .prcard .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    transition: .5s;
+    opacity: 1; /* Initially, the image is fully visible */
+}
+
+
+
+.prcontainer .prcard .imgBx img {
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 270px;
+    filter: drop-shadow(25px 10px 12px #222);
+}
+
+.prcontainer .prcard .contentBx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    text-align: left;
+    transition: 1s;
+    z-index: 90; /* Initially, push content down */
+    opacity: 1; /* Initially, content is not visible */
+}
+
+
+
+.prcontainer .prcard .contentBx h3 {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.prcontainer .prcard .contentBx .size,
+.prcontainer .prcard .contentBx .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    transition: .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+
+.prcontainer .prcard .contentBx .size h3,
+.prcontainer .prcard .contentBx .color h3 {
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.prcontainer .prcard .contentBx .size span {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    margin: 0 5px;
+    transition: .5s;
+    color: #111;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+.prcontainer .prcard .contentBx .color span {
+    width: 20px;
+    height: 20px;
+    background: #ff0;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.prcontainer .prcard .contentBx a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .5s;
+}
+
+
+
+@media (min-width: 992px) {
+    .prcol {
+        width: calc(33.33% - 20px);
+        /* Adjust spacing between cards */
+        margin-right: 20px;
+    }
+
+    .prcol:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 601px) {
+    .prcol {
+        width: calc(50% - 20px);
+        /* Adjust spacing between cards */
+        margin-right: 20px;
+    }
+
+    .prcol:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+ /* card */
+@media (min-width: 992px) {
+    .prcol {
+        width: calc(33.33% - 20px);
+        /* Adjust spacing between cards */
+        margin-right: 20px;
+    }
+
+    .prcol:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 601px) {
+    .prcol {
+        width: calc(50% - 20px);
+        /* Adjust spacing between cards */
+        margin-right: 20px;
+    }
+
+    .prcol:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .prcol {
+        width: 100%;
+        margin-right: 0;
+    }
+}

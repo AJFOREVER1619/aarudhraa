@@ -1,0 +1,257 @@
+/* Reset default margin and padding */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    
+}
+/* Navbar styles */
+.navbar {
+    background-color: transparent;
+    color: #D1A272;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.solid {
+    background: linear-gradient(45deg, rgba(0, 255, 214, 1) 0%, rgba(8, 226, 96, 1) 100%);
+    color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 10px;
+    padding: 0;
+}
+
+.navbar-header {
+    display: flex;
+    align-items: start;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Vertically center content */
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar-brand img {
+    margin-right: 10px; /* Add some spacing between logo and text */
+}
+
+.navbar-toggle {
+    display: none;
+    margin-left: auto;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.navbar-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    flex-grow: 1; /* Allow the links to take up remaining space */
+}
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Button styles for navbar links */
+.nav-links .button-81 {
+    background-color: transparent;
+    border: 0 solid #e2e8f0;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-links .button-81:hover {
+    background-color: #1e293b;
+    color: #fff;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-links a:hover .button-81 {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Image section styles */
+.image {
+    background-color: #490D40;
+    background: url(https://sonorangirl.github.io/Earth-Quotes/img/google-earth-view-South-Iceland3.jpg) no-repeat center center;
+    background-size: cover;
+    height: 570px;
+    margin-top: -20px;
+}
+
+.image .heading {
+    color: white;
+    text-align: center;
+    padding-top: 200px;
+}
+
+.image p {
+    text-align: center;
+    padding: 20px 60px;
+}
+
+.image .btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.image .btn:hover {
+    color: #C57ED3;
+    border-color: #C57ED3;
+}
+
+/* About section styles */
+.about {
+    background-color: #C57ED3;
+    color: #490D40;
+    height: 600px;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.about h2 {
+    padding-top: 220px;
+}
+
+.about p {
+    padding: 20px 80px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start; /* Align content to the left */
+    }
+
+    .navbar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-toggle {
+        display: block; /* Change this to "block" to always show the toggle button */
+        margin-left: auto;
+        order: 2;
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .navbar-brand {
+        order: 1; /* Keep the brand on the left */
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        background: linear-gradient(45deg, rgba(0, 255, 214, 1) 0%, rgba(8, 226, 96, 1) 100%);
+        top: 110px;
+        left: 0;
+        z-index: 10;
+        opacity: 0; /* Start with opacity set to 0 */
+    transform: translateY(-100%); /* Start with menu off-screen */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+    visibility: hidden; /* Hide the menu initially */
+
+    }
+
+    .nav-links.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .button-81 {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links:not(.active) {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}

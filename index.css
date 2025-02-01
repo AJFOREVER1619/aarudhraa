@@ -1,0 +1,400 @@
+body {
+  font-family: "Pridi", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.black-container {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 255, 214, 1) 0%,
+    rgba(8, 226, 96, 1) 100%
+  );
+  padding: 20px 0;
+}
+
+.black-container .card {
+  height: 170px;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.black-container .card .card-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.black-container .card .card-side {
+  position: absolute;
+  backface-visibility: hidden;
+  /* This hides the side that is not facing us */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* This ensures the content does not overflow the card */
+}
+
+@media screen and (max-width: 600px) {
+  .services {
+    padding: 20px 0;
+  }
+
+  .black-container .card .card-image img {
+    width: 100%;
+    /* or whatever size you feel is right for mobile */
+    margin: 0 auto;
+  }
+
+  .services h3 {
+    font-size: 1.5rem;
+    /* adjust as necessary */
+  }
+
+  .black-container .card {
+    width: 100%;
+    margin-bottom: 20px;
+    /* Add some space between stacked cards */
+  }
+}
+
+.contact {
+  background: white;
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/leaf1.png");
+  /* Replace with the actual path to your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.cdesc {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 650px;
+  background: white;
+  overflow: hidden;
+  /* Ensure that the pseudo-element doesn't overflow */
+}
+
+.cdesc::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/herbal1.png");
+  /* Replace with the actual path to your image */
+  background-repeat: no-repeat;
+  background-position: 0 50px;
+  /* Start with opacity set to 0 */
+  animation: fade-in-background 2s forwards;
+  /* Apply a fade-in animation */
+  /* Place the pseudo-element behind the content */
+}
+
+@keyframes fade-in-background {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Sigmar&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.final {
+  background: linear-gradient(white, #e0e0e0);
+}
+
+.slogan {
+  text-align: center;
+  color: #d1a272;
+  padding: 10px;
+  line-height: 1;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  margin-top: 50px;
+  /* Adjust vertical spacing */
+}
+
+.slogan span {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.slogan::before,
+.slogan::after {
+  content: "";
+  position: absolute;
+  top: 57%;
+  transform: translateY(-50%);
+  width: 0;
+  /* Start with zero width */
+  height: 2px;
+  /* Adjust the line height */
+  background-color: #d1a272;
+  transition: width 0.5s ease;
+  /* Add transition for width change */
+}
+
+.slogan::before {
+  left: -20px;
+  /* Adjust the distance from the text */
+}
+
+.slogan::after {
+  right: -20px;
+  /* Adjust the distance from the text */
+}
+
+.slogan.scroll-down::before,
+.slogan.scroll-down::after {
+  width: 560px;
+  /* Grow the line width on down scroll */
+}
+
+.slogan.scroll-up::before,
+.slogan.scroll-up::after {
+  width: 0;
+  /* Shrink the line width on up scroll */
+}
+
+.slogan span:nth-child(1) {
+  animation-delay: 0.1s;
+  font-size: 100px;
+}
+
+.slogan span:nth-child(2) {
+  animation-delay: 0.2s;
+  font-size: 100px;
+}
+
+.slogan span:nth-child(3) {
+  animation-delay: 0.3s;
+  font-size: 100px;
+}
+
+.slogan span:nth-child(4) {
+  animation-delay: 0.4s;
+  font-size: 100px;
+}
+
+.slogan span:nth-child(5) {
+  animation-delay: 0.5s;
+  font-size: 100px;
+}
+
+.slogan span:nth-child(6) {
+  animation-delay: 0.6s;
+  font-size: 100px;
+}
+
+.slogan span:nth-child(7) {
+  animation-delay: 0.7s;
+  font-size: 100px;
+}
+
+.slogan span:nth-child(8) {
+  animation-delay: 0.8s;
+  font-size: 100px;
+}
+
+.slogan span:nth-child(9) {
+  animation-delay: 0.9s;
+  font-size: 100px;
+}
+
+.slogan span:nth-child(10) {
+  animation-delay: 1s;
+  font-size: 67px;
+}
+
+.slogan span:nth-child(11) {
+  animation-delay: 1.1s;
+  font-size: 67px;
+}
+
+.slogan span:nth-child(12) {
+  animation-delay: 1.2s;
+  font-size: 67px;
+}
+
+.slogan span:nth-child(13) {
+  animation-delay: 1.3s;
+  font-size: 67px;
+}
+
+.slogan span:nth-child(14) {
+  animation-delay: 1.4s;
+  font-size: 67px;
+}
+
+.slogan span:nth-child(15) {
+  animation-delay: 1.5s;
+  font-size: 67px;
+}
+
+.slogan span:nth-child(16) {
+  animation-delay: 1.6s;
+  font-size: 67px;
+}
+
+.slogan span:nth-child(17) {
+  animation-delay: 1.7s;
+  font-size: 67px;
+}
+
+.slogan span:nth-child(18) {
+  animation-delay: 1.8s;
+  font-size: 67px;
+}
+
+.slogan span:nth-child(19) {
+  animation-delay: 1.9s;
+  font-size: 67px;
+}
+
+.slogan span:nth-child(20) {
+  animation-delay: 2s;
+  font-size: 67px;
+}
+
+.slogan span:nth-child(21) {
+  animation-delay: 2.1s;
+  font-size: 67px;
+}
+
+/* Media query to adjust line position on smaller screens */
+@media screen and (max-width: 600px) {
+  .slogan.scroll-down::before,
+  .slogan.scroll-down::after {
+    width: 40px;
+    /* Grow the line width on down scroll */
+  }
+
+  .slogan.scroll-up::before,
+  .slogan.scroll-up::after {
+    width: 0;
+    /* Shrink the line width on up scroll */
+  }
+}
+
+@keyframes lineAnimation {
+  0% {
+    width: 0;
+    /* Start with no width */
+  }
+
+  100% {
+    width: 100px;
+    /* Expand to the specified width */
+  }
+}
+
+.topics {
+  text-align: center;
+  position: relative;
+  color: #d1a272;
+}
+
+.topics::before,
+.topics::after {
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 0;
+  /* Start with no width */
+  background-color: #d1a272;
+  margin: 0 10px;
+  transition: width 0.5s ease;
+  /* Add transition for smooth width change */
+}
+
+.topics.animated::before,
+.topics.animated::after {
+  width: 100px;
+  /* Initial width */
+}
+
+@media (max-width: 768px) {
+  .topics::before,
+  .topics::after {
+    width: 20px; /* Adjust this value as needed */
+  }
+
+  .topics.animated::before,
+  .topics.animated::after {
+    width: 20px; /* Adjust this value as needed */
+  }
+}
+
+@keyframes lineAnimation {
+  0% {
+    width: 0;
+    /* Start with no width */
+  }
+
+  100% {
+    width: 100%;
+    /* Expand to full width */
+  }
+}
+
+/* view more */
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Adjust this if necessary */
+}
+
+.view-more {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s;
+  vertical-align: middle;
+}
+
+.arrow {
+  display: inline-block;
+  transform: translateX(0px);
+  opacity: 1;
+  transition: transform 0.3s, opacity 0.3s;
+  vertical-align: middle;
+}
+
+.view-more:hover .arrow {
+  transform: translateX(10px);
+  opacity: 1;
+}
+
+.view-more:hover {
+  color: #3e4095;
+}
